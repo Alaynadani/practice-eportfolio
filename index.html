@@ -17,29 +17,29 @@
                 <li class="nav__link">
                     <a href="#about" class="
                         nav__link--anchor
-                        link__hovor-effect
-                        link__hovor-effect--black"
+                        link__hover-effect
+                        link__hover-effect--black"
                         >About</a>
                 </li>
                 <li class="nav__link">
                     <a href="#projects" class="
                         nav__link--anchor
-                        link__hovor-effect
-                        link__hovor-effect--black"
+                        link__hover-effect
+                        link__hover-effect--black"
                         >Projects</a>
                 </li>
                 <li class="nav__link">
                     <a href="#contact" class="
                         nav__link--anchor
-                        link__hovor-effect
-                        link__hovor-effect--black"
+                        link__hover-effect
+                        link__hover-effect--black"
                         >Contact</a>                        
                 </li>
                 <li class="nav__link click">
                     <a href="#contact" class="
                         nav__link--anchor
-                        link__hovor-effect
-                        link__hovor-effect--black"
+                        link__hover-effect
+                        link__hover-effect--black"
                         ><i class="fa-solid fa-circle-half-stroke"></i></a>
                 </li>
             </ul>
@@ -74,6 +74,68 @@
     <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
     </a>
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about"></h4>Frontend Software Engineer.
+            <p class="modal__para">
+                I am a 27 year old <span class="pink">frontend soltware engineer </span>with a strong passion for developing websites with great <span class="pink">user friendly experiences</span>.
+                <br>
+                I currently work on extremely difficult engineering problems and learn from a team consisting of some of the most <span class="pink">talented </span>and <span class="pink">experienced </span>software engineers every day.
+            </p>
+            <div class="modal__languages">
+                <div class="modal__language">
+                    <i  class="fa-brands fa-html5"></i>
+                    <span class="language__name">HTML</span>
+                </div>
+                <div class="modal__language">
+                    <i  class="fa-brands fa-css3-alt"></i>
+                    <span class="language__name">CSS</span>
+                </div>
+                <div class="modal__language">
+                    <i  class="fa-brands fa-js"></i>
+                    <span class="language__name">JavaScript</span>
+                </div>
+                <div class="modal__language">
+                    <i  class="fa-brands fa-react"></i>
+                    <span class="language__name">React</span>
+                </div>              
+                 
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+        <h3 class="modal__title modal__title--contact">
+            Let's have a chat!
+        </h3>
+        <h4 class="modal__sub-title modal__sub-title--contact">
+            I'd love to hear from you.
+        </h4>
+        <form id="contact__form" action="">
+            <div class="form__item">
+                <label class="form__item--label">Name</label>
+                <input class="input" name="user-name" type="text">
+            </div>
+            <div class="form__item">
+                <label class="form__item--label">Email</label>
+                <input class="input" name="user-email" type="email">
+            </div>
+            <div class="form__item">
+                <label class="form__item--label">Message</label>
+                <textarea class="textarea" name="message" type="text"></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+                Send it my way
+            </button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking with you soon.
+        </div>
+        </div>
+        <i class="fas fa-times modal__exit"></i>
+    </div>
     </section>
     <section id="projects">
         <div class="container">
@@ -108,9 +170,103 @@
                             </div>
                         </div>
                     </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./practice eporfolio assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg">
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Projects 
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript, Vue, Vuex
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, perferendis illo! Dolorem, sint mollitia in itaque quas explicabo numquam impedit alias recusandae qui architecto placeat quae pariatur delectus reprehenderit suscipit!
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="" class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>                                
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./practice eporfolio assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg">
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Projects 
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript, Vue, Vuex
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, perferendis illo! Dolorem, sint mollitia in itaque quas explicabo numquam impedit alias recusandae qui architecto placeat quae pariatur delectus reprehenderit suscipit!
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="" class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>                                
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
+<footer>
+    <div class="container">
+        <div class="footer__row">
+
+            
+            <figure>
+                <img class="footer__logo--img" src="./practice eporfolio assets/Personal Logo.png" alt="">
+            </figure>
+            <div class="footer__social--list">
+                <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white"
+                >
+                GitHub
+            </a>
+            <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white"
+                >
+                LinkedIn
+            </a>
+            <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white"
+                >
+                Contact
+            </a>
+            <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white"
+                >
+                Resume
+            </a>
+            </div>
+        </div>
+        <div class="footer__copyright">&copy Copyright 2026 </div>
+    </div>
+</footer>
 </body>
 </html>

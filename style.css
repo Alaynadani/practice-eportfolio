@@ -24,8 +24,62 @@ button {
     cursor: pointer;
 }
 
+
+
+section {
+    background-color: rgb(245, 245, 245);
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    outline: none;
+    border: 3px solid #c0c4cc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+
+}
+
+.textarea {
+    resize: vertical;
+    height: 100px;
+    padding: 12px;
+    margin-top: 8px;
+    transition: all 300ms ease;
+}
+
+form__item--label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input:hover, textarea:hover {
+    border-color: #e81279;
+    transition: all 300ms ease;
+}
+
+.input:focus, textarea:focus {
+    border-color: #e81279;
+}
+
+.container {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
 .click {
-    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    transition: all 300ms ease;
 }
 
 .click:hover {
@@ -34,21 +88,6 @@ button {
 
 .click:active {
     transform: scale(0.8);
-}
-
-section {
-    background-color: rgb(245, 245, 245);
-}
-
-.container {
-    padding: 50px 0;
-}
-
-.row {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 12px;
 }
 
 .title {
@@ -63,7 +102,34 @@ section {
    
 }
 
- /*
+.link__hover-effect {
+    position: relative;
+}
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;   
+    transition: all 300ms ease;
+}
+
+.link__hover-effect--white:after {
+    background-color: #fff;
+}
+
+.link__hover-effect--black:after {
+    background-color: #242424;
+}
+
+.link__hover-effect:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+/*
 
 LANDING PAGE
 
@@ -197,6 +263,178 @@ nav {
     font-size: 20px;
  }
 
+ /*
+
+MODEL 
+
+*/
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 700px;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+.modal__half {
+    width: 50%;
+    padding: 40px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.modal__about {
+    background-color: rgb(245, 245, 245);
+    
+}
+
+.modal__languages {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal__language {
+    font-size: 48px;
+    width: 20%;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e81279;
+    transition: all 300ms ease;
+    
+}
+
+.modal__language:hover .language__name {
+    transform: scale(1);
+}
+
+.modal__language:hover {
+    filter: brightness (80%);
+    transform: scale(0.9);
+}
+
+.language__name {
+    position: absolute;
+    bottom: -10px;
+    font-size: 12px;
+    transform: scale(0);
+    transition: all 300ms ease;
+
+}
+
+.modal__contact {
+    background-color: #242424;
+    color: white;
+    
+}
+
+.modal__title {
+    font-size: 26px;
+}
+
+.modal__sub-title {
+    margin: 12px 0 24px 0;
+    font-size: 14px;
+}
+
+.modal__para {
+    margin-bottom: 12px;
+    line-height: 1.75;
+}
+
+.form__item {
+    margin-bottom: 20px;
+}
+
+.form__submit {
+    background-color:#e81279;
+    border: 2px solid;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 24px;
+    font-size: 20px;
+    transition: all 300ms ease;
+}
+
+.form__submit:hover {
+    border-color: #fff;
+    background-color: transparent;
+}
+
+.form__submit:active {
+    border-color:#e81279;
+    color: #e81279;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay--loading {
+    background-color: #d274a1;
+    font-size: 80px;
+    z-index: -1;
+}
+
+.modal__overlay--success {
+    background-color: #e81279;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+}
+
+
+.fa-spinner {
+    animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 28px;
+}
+
+.modal__exit:hover {
+    transform: scale(1.2);
+}
+
+
 /*
 
 PROJECTS 
@@ -213,6 +451,11 @@ PROJECTS
 .project__img {
     width: 100%;
     transition: all 600ms ease;
+}
+
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter:blur(5px);
 }
 
 .project__wrapper {
@@ -275,4 +518,57 @@ font-size: 40px;
 
 .project__description--para {
     margin: 16px 0;
+}
+
+.project__list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    scroll-snap-type: y proximity;
+}
+
+.project {
+    scroll-snap-align: start;
+}
+
+/*
+
+LANDING PAGE
+
+*/
+
+footer {
+    background-color: #242424;
+    display: flex;
+    padding: 6% 0;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo--img {    
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    filter: hue-rotate(105deg) saturate(200%) brightness(200%);
+}
+
+.footer__social--list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin: 28px 0;
+
+}
+.footer__social--link,
+.footer__copyright {
+    color: white;
+}
+
+.footer__copyright {
+    padding-left: 28px;
 }
