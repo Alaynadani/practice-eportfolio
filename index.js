@@ -1,8 +1,31 @@
 // template_3wo0ota
 //service_mvhl68a
 //o2lWsGis6MT1cppyJ
+let isModalOpen = false;
+let contrastToggle = false;
+const scaleFactor = 1 / 20;
 
-console.log('index.js loaded');
+function moveBackground(event) {
+    const shapes = document.querySelectorAll(".shape")
+    const x = event.clientX * scaleFactor;
+    const y = event.clientY * scaleFactor;
+    
+    for (let i = 0; i < shapes.length; ++i) {
+        const isOdd = i % 2 !== 0
+        const boolInt = isOdd ? -1 : 1;
+        shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`
+    }
+}
+
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+    document.body.classList += " dark-theme"
+}
+else {
+    document.body.classList.remove("dark-theme")
+}
+}
 
 function contact(event) {
     event.preventDefault();
@@ -24,15 +47,21 @@ function contact(event) {
             alert(
                 "The email service is temporarily unavailable."
             )
-        })
+        })              
         
-    
-    
-   
-        
-        console.log('it worked 1')
-   
 }
 
 const form = document.getElementById('contact__form');
 form.addEventListener('submit', contact);
+
+function toggleModal() {
+    if(isModalOpen) {
+        isModalOpen = false
+        document.body.classList.remove("modal--open");
+        return 
+        
+    }
+    isModalOpen = true;
+    //toggle modal //
+    document.body.classList.add("modal--open")
+}

@@ -7,6 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li {
     list-style-type: none;
 }
@@ -28,6 +32,7 @@ button {
 
 section {
     background-color: rgb(245, 245, 245);
+    transition: all 300 ease;
 }
 
 input, textarea {
@@ -64,6 +69,8 @@ form__item--label {
 .input:focus, textarea:focus {
     border-color: #e81279;
 }
+
+
 
 .container {
     padding: 50px 0;
@@ -129,6 +136,57 @@ form__item--label {
     width: 100%;
 }
 
+nav,
+.scroll,
+.header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;    
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-solid,
+.dark-theme .header__para {
+    color: white;
+}
+
+.dark-theme section {
+    background-color: #242424;
+}
+
+.dark-theme #personal-logo {
+    filter: invert(1);
+}
+
+.dark-theme .scroll__icon {
+    border-color: white;
+}
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after {
+    background-color: white;
+}
+
+
+.dark-theme .mail__btn  {
+    color: #242424;
+    background-color: white;
+}
+
+.dark-theme .mail__btn .fa-solid {
+    color: #242424;
+}
+
 /*
 
 LANDING PAGE
@@ -181,9 +239,11 @@ LANDING PAGE
     border: none;
     background-color: #e81279;
     color: #fff;
-    position: absolute;
+    position: fixed;
     bottom: 32px;
     right: 40px;
+    z-index: 100;
+    box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28)
 }
 
 .scroll {
@@ -281,6 +341,18 @@ MODEL
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;    
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s, box-shadow 0.5s ease;
+}
+
+.modal--open .modal {
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s linear, box-shadow 0.5s ease;
 }
 
 .modal__half {
@@ -290,11 +362,23 @@ MODEL
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%);
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
-    
+    transform: translateX(-110%);
+}
+
+.modal__contact {
+    background-color: #242424;
+    color: white;
+    transform: translateX(110%);
 }
 
 .modal__languages {
@@ -333,11 +417,6 @@ MODEL
 
 }
 
-.modal__contact {
-    background-color: #242424;
-    color: white;
-    
-}
 
 .modal__title {
     font-size: 26px;
@@ -385,7 +464,7 @@ MODEL
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -407,6 +486,7 @@ MODEL
 
 .modal__overlay--visible {
     z-index: 1;
+    display: flex;
 }
 
 
@@ -546,6 +626,7 @@ footer {
     background-color: #242424;
     display: flex;
     padding: 6% 0;
+    position: relative 
 }
 
 .footer__row {
@@ -576,4 +657,132 @@ footer {
 
 .footer__copyright {
     padding-left: 28px;
+}
+
+/* 
+
+SHAPES
+
+SHAPES ON THE FIRST ROW 
+height = 15vh
+
+shapes on the second row 
+height 50vh
+
+shapes on the third row 
+height 80vh
+
+shapes on the first column 
+width - 5vw
+
+shapes on the second column 
+width - 50vw
+
+shapes on the third column
+width - 80vw
+
+*/
+
+.shape {
+    position: fixed;
+}
+
+.shape--0 {
+    top: 30vh;
+    left: 5vw;
+}
+
+.shape--1 {
+    top: 30vh;
+    left: 50 vw;
+}
+
+.shape--2 {
+    top: 30vh;
+    left: 80vw;
+}
+
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+
+.shape--6 {
+    top: 80vh;
+    left: 5vw;
+}
+
+.shape--7 {
+    top: 80vh;
+    left: 50vw;
+}
+
+.shape--8 {
+    top: 80vh;
+    left: 80vw;
+}
+
+
+/* SMALL PHONES, TABLETS, LARGE SMART PHONES */
+
+
+@media (max-width: 768px) {
+    title {
+        font-size: 80px;
+    }
+
+    .header__para {
+    font-size: 20px;
+    }
+    .modal {
+    top: 0;
+    left: 0;
+    transform: none;
+    height: auto;
+    width :100%;
+    flex-direction: column-reverse;
+    }
+    .modal__half {
+    width: 100%;
+    }
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 52px;
+    }
+    .header__para {
+        font-size: 18px;
+    }
+    .nav__link:first-child {
+        display: none;
+    }
+    .project__description--para {
+        display: none;
+    }
+    .project__description {
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__description--sub-title {
+        margin-bottom: 8px;
+    }
+    .modal__half {
+        padding: 40px;
+    }
+
 }
